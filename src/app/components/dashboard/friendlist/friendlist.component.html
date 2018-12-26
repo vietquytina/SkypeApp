@@ -1,0 +1,10 @@
+<ul class="friend-list">
+    <li *ngFor="let friend of friends" class="friend-item" (click)="select(friend, $event)">
+        <a><img src="/assets/avatar.png" height="50" />
+            <span class="text">
+                <span class="title">{{friend.Name}}</span>
+                <span class="title"><span class="message">{{friend.Slogan}}</span></span>
+            </span>
+        </a>
+    </li>
+</ul>

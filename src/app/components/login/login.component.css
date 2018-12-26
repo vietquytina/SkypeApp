@@ -1,0 +1,60 @@
+.outer {
+    display: table;
+    position: absolute;
+    background-color: #0084D9;
+    width: 100%;
+    height: 100%;
+}
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+.inner {
+    width: 440px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.app {
+    background: #ffffff;
+    padding: 44px;
+}
+.form-control {
+    border: none;   
+    border-bottom: 1px solid rgba(0,0,0,.6);
+    padding: 0;
+}
+.form-control:focus {
+    box-shadow: none;
+    border-bottom: 1px solid #0084D9;
+}
+.background-logo-holder {
+    height: 36px;
+    margin-bottom: 24px;
+}
+.background-logo {
+    max-height: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.text-title {
+    color: #404040;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Segoe UI","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+}
+.invalid-feedback {
+    font-size: 15px;
+}
+.logo {
+    max-width: 256px;
+    height: 24px;
+}
+.text-13 {
+    font-size: .8125rem;
+}
+.btn-login {
+    padding: 4px 12px;
+    min-width: 100px;
+}
