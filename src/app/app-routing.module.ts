@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './components/pageNotFound/pageNotFound.co
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuard } from './services/auth.guard';
 import { AuthDeactive } from './services/auth.deactive';
+import { ChatComponent } from './components/chat/chat.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },

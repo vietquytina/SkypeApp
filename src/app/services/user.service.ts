@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { DataService } from './data.service';
 import { AccountViewModel } from '../models/account.viewmodel';
 import { FriendViewModel } from '../models/friend.viewmodel';
+import { MessageViewModel } from '../models/message.viewmodel';
 import { combine, BASE_URL, LOGIN } from '../constants/app.constant';
 
 @Injectable()
@@ -35,6 +36,21 @@ export class UserService {
                 friends.push(friend);
             });
             return friends;
+        }));
+    }
+
+    public getMessages() {
+        return this.dataService.get('/assets/messages.json').pipe(map((res) => {
+            let messages: MessageViewModel[] = [];
+            res.forEach((f: MessageViewModel, index: number) => {
+                let message: MessageViewModel = new MessageViewModel();
+                message.MessageId = f.MessageId;
+                message.UserId = f.UserId;
+                message.Content = f.Content;
+                message.SendDateTime = f.SendDateTime;
+                messages.push(message);
+            });
+            return messages;
         }));
     }
 }

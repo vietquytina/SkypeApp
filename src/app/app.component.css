@@ -1,6 +1,36 @@
 :host ::ng-deep.form-control, :host ::ng-deep.btn {
     border-radius: 0;
 }
+
 :host ::ng-deep.container-fluid {
     padding: 0;
+}
+
+/* width */
+
+:host ::ng-deep::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 5px;
+}
+
+/* Track */
+
+:host ::ng-deep ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* Handle */
+
+:host ::ng-deep ::-webkit-scrollbar-thumb {
+    display: none;
+    border-radius: 5px;
+    height: 155px;
+}
+
+/* Handle on hover */
+
+:host ::ng-deep ::-webkit-scrollbar-thumb:hover {
+    display: block;
+    background: #C6C6C6;
 }

@@ -18,6 +18,10 @@ import { FriendListComponent } from './components/dashboard/friendlist/friendlis
 import { LoadingComponent } from './components/loading/loading.component';
 import { PageNotFoundComponent } from './components/pageNotFound/pageNotFound.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MainBoardComponent } from './components/dashboard/mainboard/mainboard.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { appStoreProviders } from './redux/app.store';
+import { MessageHub } from './services/signalR/hub';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     FriendListComponent,
     LoadingComponent,
     PageNotFoundComponent,
-    DashboardComponent
+    DashboardComponent,
+    MainBoardComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ModalModule.forRoot()
   ],
   entryComponents: [MessageBoxComponent, LoadingComponent],
-  providers: [DataService, RouteService, AuthService, AuthGuard, AuthDeactive, BsModalService],
+  providers: [DataService, RouteService, AuthService, AuthGuard, AuthDeactive, 
+    BsModalService, appStoreProviders, MessageHub],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

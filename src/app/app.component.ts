@@ -1,7 +1,9 @@
-import { Component, Injector } from '@angular/core';
-import { createCustomElement } from '@angular/elements';
+import { Component, Inject } from '@angular/core';
 
-import { LoadingComponent } from './components/loading/loading.component';
+import { Store } from 'redux';
+
+import { AppStore } from './redux/app.store';
+import { IAppState } from './redux/app.state';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +11,6 @@ import { LoadingComponent } from './components/loading/loading.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(@Inject(AppStore) private store: Store<IAppState>) {
+  }
 }

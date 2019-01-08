@@ -1,12 +1,305 @@
-<div class="container-fluid body">
-    <div class="lds-roller">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+<div class="swx desktop">
+    <div class="shell notifications" id="notifications" aria-live="polite" aria-atomic="true"></div>
+    <div class="shell mainStage" id="shellMainStage">
+        <div class="shell meComponent" id="meComponent"></div>
+        <div class="shell main" id="chatServiceContainer">
+            <aside class="sideContainer">
+                <div class="timelineComponentContainer" id="timelineComponent"></div>
+            </aside>
+            <div class="chatContainer">
+                <div class="chatComponentContainer" id="chatComponent"></div>
+            </div>
+        </div>
+        <div class="shell toasts" id="toasts" aria-live="polite" aria-atomic="true"></div>
+        <div class="shell toastTemplates">
+            <div id="shellToastCall" class="toast extended themeBlue" aria-live="polite" aria-atomic="true">
+                <div class="top">
+                    <div class="message">
+                        <span class="iconfont callActive callIn"></span>
+                        <p class="small">
+                            <span class="atOnly">Skype for web</span>
+                            <span>Incoming call</span>
+                        </p>
+                    </div>
+                    <span class="tile">
+                        <span class="tileAvatar circle">
+                            <span class="tileImage">
+                                <img data-attr="src|avatarUrl">
+                            </span>
+                        </span>
+                    </span>
+                    <div class="tile">
+                        <span class="tileText">
+                            <span class="tileName">
+                                <h4 class="strong" data-html="displayName"></h4>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="tile">
+                        <span class="tileText">
+                            <span class="tileName">
+                                <h4 class="strong" data-html="displayName"></h4>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="button row" data-events="actionShortcuts">
+                        <button class="btn primary circle" type="btn" data-click="acceptWithVideo" title="Ctrl + Alt + PgUp"
+                            aria-label="Accept with video using Ctrl + Alt + Page Up">
+                            <span class="iconfont videoOn"></span>
+                        </button>
+                        <button class="btn primary circle" type="btn" data-click="acceptWithAudio" title="Alt + PgUp"
+                            aria-label="Accept with voice using Alt + Page Up">
+                            <span class="iconfont callStart"></span>
+                        </button>
+                        <button class="btn primary circle red" type="btn" data-click="reject" title="Alt + PgDn"
+                            aria-label="Reject call using Alt + Page Down">
+                            <span class="iconfont callEnd"></span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="bottom">
+                    <div class="iconfont circle information"></div>
+                    <div class="message">
+                        <p class="small">Accept with video using Ctrl + Alt + Page Up</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="shellToastCallNoPlugin" class="toast extended themeBlue" aria-live="polite" aria-atomic="true">
+                <div class="top">
+
+                    <span class="atOnly">Skype for web</span>
+
+                    <span class="tile">
+                        <span class="tileAvatar circle">
+                            <span class="tileImage">
+                                <img data-attr="src|avatarUrl">
+                            </span>
+                        </span>
+                    </span>
+
+                    <div class="tile">
+                        <span class="tileText" style="padding-left: 2.75em;">
+                            <span class="tileName">
+                                <h4 class="strong" data-html="displayName"></h4>
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="message">
+                        <span class="iconfont callActive callIn"></span>
+                        <p class="small">is trying to call you</p>
+                    </div>
+
+                    <div class="button row small">
+                        <button type="btn" class="btn primary small short" data-click="callToAction">
+                            <span>install plugin</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <div class="iconfont circle information"></div>
+                    <div class="message">
+                        <p class="small">You’ll need a plugin to make Skype calls</p>
+                    </div>
+                </div>
+
+                <div class="close">
+                    <button type="btn" class="btn transparent circle small" data-click="dismiss">
+                        <span class="iconfont cross">Close</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="shellToastCallNoVideo" class="toast extended themeBlue" aria-live="polite" aria-atomic="true">
+                <div class="top">
+
+                    <div class="message">
+                        <span class="iconfont callActive callIn"></span>
+                        <p class="small">
+                            <span class="atOnly">Skype for web</span>
+                            <span>Incoming call</span>
+                        </p>
+                    </div>
+
+                    <span class="tile">
+                        <span class="tileAvatar circle">
+                            <span class="tileImage">
+                                <img data-attr="src|avatarUrl">
+                            </span>
+                        </span>
+                    </span>
+
+                    <div class="tile">
+                        <span class="tileText">
+                            <span class="tileName">
+                                <h4 class="strong" data-html="displayName"></h4>
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="tile">
+                        <span class="tileText">
+                            <span class="tileName">
+                                <h4 class="strong" data-html="displayName"></h4>
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="button row" data-events="actionShortcuts">
+                        <button class="btn primary circle disabled" disabled="disabled" type="btn" title="Ctrl + Alt + PgUp">
+                            <span class="iconfont videoOn"></span>
+                        </button>
+                        <button class="btn primary circle" type="btn" data-click="acceptWithAudio" title="Alt + PgUp"
+                            aria-label="Accept with voice using Alt + Page Up">
+                            <span class="iconfont callStart"></span>
+                        </button>
+                        <button class="btn primary circle red" type="btn" data-click="reject" title="Alt + PgDn"
+                            aria-label="Reject call using Alt + Page Down">
+                            <span class="iconfont callEnd"></span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="bottom">
+                    <div class="iconfont circle information"></div>
+                    <div class="message">
+                        <p class="small">Accept the call using Alt + PgUp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shell footer" role="contentinfo" id="footer">
+        <div class="app">
+            <p class="smaller">
+                <a id="linkFooterFAQs" href="https://www.skype.com/go/help.faq.skype.for.web" target="_blank"
+                    aria-label="frequently asked questions">FAQs</a>
+            </p>
+            <p class="smaller">·</p>
+            <p class="smaller">
+                <a id="linkFooterFeedback" href="https://feedback.skype.com?p=908&v=0.245.0-{swxVersion}&lang=en&eTag=8D13EF10C52BC2E&tcg={hashedId}&e={pageId}"
+                    target="_blank" placeholders="href">Feedback</a>
+            </p>
+            <p class="smaller">·</p>
+            <p class="smaller">
+                <a id="linkDownloadDesktopClient" href="https://go.skype.com/download" target="_blank" placeholders="href">Download
+                    Desktop Client</a>
+            </p>
+            <p class="smaller">·</p>
+            <form class="shell languageSelectorForm">
+                <p class="shell selectedLanguage smaller" id="shellSelectedLanguage">English</p>
+                <div>
+                    <select class="shell languageSelector" id="shellLanguageSelector" aria-label="Language" title="Language">
+                        <option value="en" lang="en">English</option>
+                        <option value="ar" lang="ar">عربي</option>
+                        <option value="bg" lang="bg">Български</option>
+                        <option value="cs" lang="cs">Česky</option>
+                        <option value="da" lang="da">Dansk</option>
+                        <option value="de" lang="de">Deutsch</option>
+                        <option value="el" lang="el">Ελληνικά</option>
+                        <option value="es" lang="es">Español</option>
+                        <option value="et" lang="et">Eesti</option>
+                        <option value="fi" lang="fi">Suomi</option>
+                        <option value="fr" lang="fr">Français</option>
+                        <option value="he" lang="he">עברית</option>
+                        <option value="hi" lang="hi">हिन्दी</option>
+                        <option value="hu" lang="hu">Magyar</option>
+                        <option value="id" lang="id">Bahasa Indonesia</option>
+                        <option value="it" lang="it">Italiano</option>
+                        <option value="ja" lang="ja">日本語</option>
+                        <option value="ko" lang="ko">한국어</option>
+                        <option value="nl" lang="nl">Nederlands</option>
+                        <option value="no" lang="no">Norsk</option>
+                        <option value="pl" lang="pl">Polski</option>
+                        <option value="pt" lang="pt">Português</option>
+                        <option value="pt-br" lang="pt-br">Português (Brasileiro)</option>
+                        <option value="ro" lang="ro">Română</option>
+                        <option value="ru" lang="ru">Русский</option>
+                        <option value="sv" lang="sv">Svenska</option>
+                        <option value="tr" lang="tr">Türkçe</option>
+                        <option value="uk" lang="uk">Українська</option>
+                        <option value="zh-Hans" lang="zh-Hans">中文（简体)</option>
+                        <option value="zh-Hant" lang="zh-Hant">中文 (繁體)</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="legal">
+            <p class="smaller">
+                <a id="linkFooterTerms" href="https://www.skype.com/go/tou" target="_blank">
+                    <span class="noShort noNarrow">Terms of use</span>
+                    <span class="noMedium noWide">Terms</span>
+                </a>
+            </p>
+            <p class="smaller">·</p>
+            <p class="smaller">
+                <a id="linkFooterPrivacy" href="https://www.skype.com/go/privacy" target="_blank">
+                    <span class="noShort noNarrow">Privacy and cookie policy</span>
+                    <span class="noMedium noWide">Privacy</span>
+                </a>
+            </p>
+            <p class="smaller">·</p>
+            <p class="smaller">
+                <span class="noShort noNarrow">&copy; 2017 Skype and/or Microsoft.</span>
+                <span class="noMedium noWide">&copy; 2017 Skype/Microsoft.</span>
+            </p>
+        </div>
+    </div>
+
+    <div id="shellSplashScreen" class="shellSplashScreen themeBlue">
+
+        <div class="shellSplashContent">
+
+            <img src="skype_logo_white.png" alt="Skype" class="shellSplashLogo">
+
+            <div class="shellSpinnerContainer">
+                <div class="spinner white">
+                    <div class="circle one">
+                        <div class="rotate">
+                            <div class="position">
+                                <div class="scale">
+                                    <div class="shape"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="circle two">
+                        <div class="rotate">
+                            <div class="position">
+                                <div class="scale">
+                                    <div class="shape"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="circle three">
+                        <div class="rotate">
+                            <div class="position">
+                                <div class="scale">
+                                    <div class="shape"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="circle four">
+                        <div class="rotate">
+                            <div class="position">
+                                <div class="scale">
+                                    <div class="shape"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="shellSplashLoading">Loading...</div>
+        </div>
     </div>
 </div>

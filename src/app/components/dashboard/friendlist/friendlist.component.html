@@ -1,10 +1,43 @@
-<ul class="friend-list">
-    <li *ngFor="let friend of friends" class="friend-item" (click)="select(friend, $event)">
-        <a><img src="/assets/avatar.png" height="50" />
-            <span class="text">
-                <span class="title">{{friend.Name}}</span>
-                <span class="title"><span class="message">{{friend.Slogan}}</span></span>
-            </span>
+<div class="part part-top">
+    <div class="friend-item">
+        <a (click)="showCurrentUserInfo()">
+            <div class="d-inline-block">
+                <img class="position-relative text-middle" src="/assets/avatar.png" height="50" />
+                <img class="position-relative float-right logo-status" src="/assets/glyph-online.svg" width="10" />
+            </div>
+            <div class="d-inline-block">
+                <span class="text text-middle">
+                    <span class="title">{{user.DisplayName}}</span>
+                    <span class="title"><span class="message">Online</span></span>
+                </span>
+            </div>
         </a>
-    </li>
-</ul>
+    </div>
+    <div class="input-group mt-1 p-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input type="text" class="form-control rounded-right" placeholder="People, groups and messages" aria-label="People, groups and messages" aria-describedby="basic-addon1" />
+    </div>
+</div>
+<div class="part part-bottom">
+    <div class="title-header">
+        <span class="title">FAVORITES</span>
+    </div>
+    <ul class="friend-list">
+        <li *ngFor="let friend of friends" class="friend-item" (click)="select(friend, $event)" (contextmenu)="showUserContextMenu($event)">
+            <a>
+                <div class="d-inline-block">
+                    <img class="position-relative text-middle" src="/assets/avatar.png" height="50" />
+                    <img class="position-relative float-right logo-status" src="/assets/glyph-online.svg" width="10" />
+                </div>
+                <div class="d-inline-block">
+                    <span class="text text-middle">
+                        <span class="title">{{friend.Name}}</span>
+                        <span class="title"><span class="message">{{friend.Slogan}}</span></span>
+                    </span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
